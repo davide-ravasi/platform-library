@@ -1,0 +1,93 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.panel {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  line-height: 1.8em;
+  padding: 5px 0;
+  background: #f4f4f4;
+  padding: 10px;
+}
+
+
+.grid {
+    border: solid 1px #ccc padding: 10px 10px 0 0;
+}
+.grid li {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: solid 1px #ccc;
+    margin: 0 0 10px 10px;
+    background: #eee;
+}
+
+/**** Transitions ****/
+
+.masonry,
+.masonry li { /* apply before masonry add class */
+    position: absolute; /* important to add it before enter animation start */
+    
+    -webkit-transition-duration: .7s;
+    transition-duration: .7s;
+    
+    -webkit-transition-property: all;
+    transition-property: all;
+}
+
+.masonry .masonry-enter { /* limit animated properties for entering elements */
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.masonry-enter,
+.masonry-leave.masonry-leave-active {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+}
+
+.masonry-leave,
+.masonry-enter.masonry-enter-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}

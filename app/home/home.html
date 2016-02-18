@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="large-10 columns">
+		<div ng-controller="HomeCtrl">
+    <input type="text" ng-model="nameFilter" />
+    <a ng-click="changeOrder('name')">Order by name</a>
+    <a ng-click="changeOrder('company')">Order by company</a>
+    <a ng-click="changeOrder('email')">Order by email</a>
+
+    <ul class="grid" masonry="true">
+        <li ng-repeat="contact in contacts | filter:{name:nameFilter} | orderBy: order">
+            <span>{{contact.name}}</span>
+            <br /> <span>{{contact.company}}</span>
+            <br /> <span>{{contact.email}}</span>
+        </li>
+    </ul>
+</div>
+	</div>
+</div>
