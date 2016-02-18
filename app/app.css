@@ -53,11 +53,14 @@ li {
 }
 .grid li {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 190px;
+    height: 200px;
     border: solid 1px #ccc;
     margin: 0 0 10px 10px;
     background: #eee;
+    box-shadow: 0px 2px 5px #CCC;
+    -moz-box-shadow: 0px 2px 5px #ccc;
+    -webkit-box-shadow: 0px 2px 5px #CCC;
 }
 
 /**** Transitions ****/
