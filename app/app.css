@@ -1,6 +1,17 @@
 /* app css stylesheet */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,300italic,300,100italic,100,700,700italic,900,900italic);
 
-.menu {
+
+body, html, a {
+  font-family: 'Lato', sans-serif;
+}
+
+button.small, .button.small {
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*.menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
@@ -32,9 +43,9 @@
 .panel {
   background: #f9f9f9;
   border: 1px solid #ccc;
-}
+}*/
 
-ul, li {
+/*ul, li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -45,19 +56,23 @@ li {
   padding: 5px 0;
   background: #f4f4f4;
   padding: 10px;
-}
+}*/
 
 
 .grid {
     border: solid 1px #ccc padding: 10px 10px 0 0;
+    margin: 20px 0 0 0;
 }
 .grid li {
     display: inline-block;
-    width: 190px;
-    height: 200px;
+    width: 228px;
+    height: 250px;
     border: solid 1px #ccc;
     margin: 0 0 10px 10px;
     background: #eee;
+    padding:10px;
+    overflow: hidden;
+    box-sizing: border-box;
     box-shadow: 0px 2px 5px #CCC;
     -moz-box-shadow: 0px 2px 5px #ccc;
     -webkit-box-shadow: 0px 2px 5px #CCC;
