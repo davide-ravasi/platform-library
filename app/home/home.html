@@ -12,6 +12,7 @@
     <li ng-repeat="contact in contacts | filter:{name:nameFilter} | orderBy: order">
         <h4>{{contact.name}}</h4>
         <p>{{contact.company}}</p>
+        <a href="#contacts_detail/{{contact.$id}}">Details</a>
     </li>
 </ul>
         </div>

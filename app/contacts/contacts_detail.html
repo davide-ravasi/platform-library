@@ -1,0 +1,6 @@
+<div class="row" ng-repeat="contact in contacts" ng-if="contact.$id == param">
+	<h1>{{contact.name}}</h1>
+	<p>{{contact.email}}</p>
+	<p>{{contact.address[0].city}}</p>
+
+</div>

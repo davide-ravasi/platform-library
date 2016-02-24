@@ -6,6 +6,9 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
   $routeProvider.when('/contacts', {
     templateUrl: 'contacts/contacts.html',
     controller: 'ContactsCtrl'
+  }).when('/contacts_detail/:id', {
+    templateUrl: 'contacts/contacts_detail.html',
+    controller: 'ContactsDetailCtrl'
   });
 }])
 
@@ -16,6 +19,7 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
 
 	// get Contacts
 	$scope.contacts = $firebaseArray(ref);
+
 
 	// Show/Add Form
 	$scope.addFormShow = false;
@@ -169,4 +173,13 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
 		$scope.zipcode = '';
 	}
 
-}]);
+}])
+.controller('ContactsDetailCtrl', ['$scope','$firebaseArray','$routeParams',function($scope,$firebaseArray,$routeParams) {
+	// Init firebase
+	//console.log('https://mycontacts-appdave.firebaseio.com/contacts/'+ $routeParams.id);
+	var ref = new Firebase('https://mycontacts-appdave.firebaseio.com/contacts');
+	// get Contacts
+	$scope.contacts = $firebaseArray(ref);
+	$scope.param = $routeParams.id;
+}])
+;
