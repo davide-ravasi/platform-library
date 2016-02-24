@@ -65,10 +65,11 @@ li {
 }
 .grid li {
     display: inline-block;
-    width: 228px;
+    position: relative;
+    width: 240px;
     height: 250px;
     border: solid 1px #ccc;
-    margin: 0 0 10px 10px;
+    margin: 0 10px 10px 0;
     background: #eee;
     padding:10px;
     overflow: hidden;
@@ -76,6 +77,20 @@ li {
     box-shadow: 0px 2px 5px #CCC;
     -moz-box-shadow: 0px 2px 5px #ccc;
     -webkit-box-shadow: 0px 2px 5px #CCC;
+}
+
+.grid li p {
+  color:#777;
+}
+
+.grid li:nth-child(4n) {
+  margin-right:0;
+}
+
+.show-details {
+  position:absolute;
+  right: 5px;
+  bottom: 10px;
 }
 
 /**** Transitions ****/
@@ -109,3 +124,13 @@ li {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+
+/**** Home ****/
+.container-home {
+  padding:20px 0 0 0;
+}
+
+.container-home .button {
+  margin:20px 0 0 5px;
+}
+

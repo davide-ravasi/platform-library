@@ -1,20 +1,30 @@
-<div class="row">
-	<div class="large-12 columns">
-    	<div ng-controller="HomeCtrl">
-<input type="text" ng-model="nameFilter" />
-<div class="small-12 columns">
-    <a href="changeOrder('name')" class="button secondary small">Order by name</a>
-    <a href="changeOrder('company')" class="button secondary small">Order by company</a>
-    <a href="changeOrder('email')" class="button secondary small">order by email</a>
-</div>
-
-<ul class="grid" masonry="true">
-    <li ng-repeat="contact in contacts | filter:{name:nameFilter} | orderBy: order">
-        <h4>{{contact.name}}</h4>
-        <p>{{contact.company}}</p>
-        <a href="#contacts_detail/{{contact.$id}}">Details</a>
-    </li>
-</ul>
+<div ng-controller="HomeCtrl" class="container-home">
+    <div class="row">
+        <button class="primary small" ng-click="showFilters()">
+            Show/hide filters
+        </button>
+    </div>
+    <div class="row collapse panel" ng-show="showFiltersState">
+        <div class="large-4 columns">
+            <label>Search by title
+                <input type="text" placeholder="Type title here" ng-model="nameFilter" />
+            </label>
         </div>
-	</div>
+        <div class="large-8 columns">
+            <a ng-click="changeOrder('name')" class="button secondary small">Order by name</a>
+            <a ng-click="changeOrder('company')" class="button secondary small">Order by company</a>
+            <a ng-click="changeOrder('email')" class="button secondary small">order by email</a>
+        </div>
+    </div>
+    <div class="row collapse">
+        <div class="large-12 columns">
+            <ul class="grid" masonry="true">
+                <li ng-repeat="contact in contacts | filter:{name:nameFilter} | orderBy: order">
+                    <h4>{{contact.name}}</h4>
+                    <p>{{contact.company}}</p>
+                    <a href="#contacts_detail/{{contact.$id}}" class="show-details">Details >></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

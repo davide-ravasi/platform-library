@@ -77,5 +77,16 @@ angular.module('myContacts.home', ['ngRoute','firebase'])
 		$scope.order = byWhat;
 	}
 
+    $scope.showFiltersState = false;
+
+    $scope.showFilters = function() {
+        if($scope.showFiltersState == true) {
+            $scope.showFiltersState = false;
+        } else {
+            $scope.showFiltersState = true;
+        }
+        console.log($scope.showFiltersState);
+    }
+
 
 }]);
